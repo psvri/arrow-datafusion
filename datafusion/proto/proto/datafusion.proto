@@ -679,6 +679,7 @@ enum ScalarFunction {
   ArrayReverse = 134;
   RegexpLike = 135;
   ToChar = 136;
+  Log1p = 137;
 }
 
 message ScalarFunctionNode {

@@ -58,7 +58,7 @@ use datafusion_expr::{
     current_time, date_bin, date_part, date_trunc, degrees, digest, ends_with, exp,
     expr::{self, InList, Sort, WindowFunction},
     factorial, find_in_set, flatten, floor, from_unixtime, gcd, gen_range, initcap,
-    instr, iszero, lcm, left, levenshtein, ln, log, log10, log2,
+    instr, iszero, lcm, left, levenshtein, ln, log, log10, log1p, log2,
     logical_plan::{PlanType, StringifiedPlan},
     lower, lpad, ltrim, md5, nanvl, now, octet_length, overlay, pi, power, radians,
     random, regexp_like, regexp_match, regexp_replace, repeat, replace, reverse, right,
@@ -574,6 +574,7 @@ impl From<&protobuf::ScalarFunction> for BuiltinScalarFunction {
             ScalarFunction::Levenshtein => Self::Levenshtein,
             ScalarFunction::SubstrIndex => Self::SubstrIndex,
             ScalarFunction::FindInSet => Self::FindInSet,
+            ScalarFunction::Log1p => Self::Log1p,
         }
     }
 }
@@ -1822,6 +1823,7 @@ pub fn parse_expr(
                 ScalarFunction::StructFun => {
                     Ok(struct_fun(parse_expr(&args[0], registry)?))
                 }
+                ScalarFunction::Log1p => Ok(log1p(parse_expr(&args[0], registry)?)),
             }
         }
         ExprType::ScalarUdfExpr(protobuf::ScalarUdfExprNode { fun_name, args }) => {

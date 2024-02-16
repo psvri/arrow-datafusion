@@ -2766,6 +2766,7 @@ pub enum ScalarFunction {
     ArrayReverse = 134,
     RegexpLike = 135,
     ToChar = 136,
+    Log1p = 137,
 }
 impl ScalarFunction {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -2906,6 +2907,7 @@ impl ScalarFunction {
             ScalarFunction::ArrayReverse => "ArrayReverse",
             ScalarFunction::RegexpLike => "RegexpLike",
             ScalarFunction::ToChar => "ToChar",
+            ScalarFunction::Log1p => "Log1p",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
@@ -3043,6 +3045,7 @@ impl ScalarFunction {
             "ArrayReverse" => Some(Self::ArrayReverse),
             "RegexpLike" => Some(Self::RegexpLike),
             "ToChar" => Some(Self::ToChar),
+            "Log1p" => Some(Self::Log1p),
             _ => None,
         }
     }
