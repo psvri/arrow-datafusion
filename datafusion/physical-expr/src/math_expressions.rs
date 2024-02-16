@@ -182,6 +182,7 @@ math_unary_function!("exp", exp);
 math_unary_function!("ln", ln);
 math_unary_function!("log2", log2);
 math_unary_function!("log10", log10);
+math_unary_function!("log1p", ln_1p);
 math_unary_function!("degrees", to_degrees);
 math_unary_function!("radians", to_radians);
 

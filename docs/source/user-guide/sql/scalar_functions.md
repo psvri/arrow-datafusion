@@ -45,6 +45,7 @@
 - [log](#log)
 - [log10](#log10)
 - [log2](#log2)
+- [log1p](#log1p)
 - [nanvl](#nanvl)
 - [pi](#pi)
 - [power](#power)
@@ -375,6 +376,19 @@ Returns the base-2 logarithm of a number.
 
 ```
 log2(numeric_expression)
+```
+
+#### Arguments
+
+- **numeric_expression**: Numeric expression to operate on.
+  Can be a constant, column, or function, and any combination of arithmetic operators.
+
+### `log1p`
+
+Returns the base-2 logarithm of a number.
+
+```
+log1p(numeric_expression)
 ```
 
 #### Arguments

@@ -565,6 +565,7 @@ scalar_expr!(Lcm, lcm, arg_1 arg_2, "least common multiple");
 scalar_expr!(Log2, log2, num, "base 2 logarithm");
 scalar_expr!(Log10, log10, num, "base 10 logarithm");
 scalar_expr!(Ln, ln, num, "natural logarithm");
+scalar_expr!(Log1p, log1p, num, "natural logarithm (1 + x)");
 scalar_expr!(Power, power, base exponent, "`base` raised to the power of `exponent`");
 scalar_expr!(Atan2, atan2, y x, "inverse tangent of a division given in the argument");
 scalar_expr!(
@@ -1360,6 +1361,7 @@ mod test {
         test_unary_scalar_expr!(Log2, log2);
         test_unary_scalar_expr!(Log10, log10);
         test_unary_scalar_expr!(Ln, ln);
+        test_unary_scalar_expr!(Log1p, log1p);
         test_scalar_expr!(Atan2, atan2, y, x);
         test_scalar_expr!(Nanvl, nanvl, x, y);
         test_scalar_expr!(Iszero, iszero, input);

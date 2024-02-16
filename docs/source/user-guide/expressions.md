@@ -135,6 +135,7 @@ but these operators always return a `bool` which makes them not work with the ex
 | log(base, x)          | logarithm of x for a particular base              |
 | log10(x)              | base 10 logarithm                                 |
 | log2(x)               | base 2 logarithm                                  |
+| log1p(x)              | natural logarithm (1 + x)                         |
 | nanvl(x, y)           | returns x if x is not NaN otherwise returns y     |
 | pi()                  | approximate value of π                            |
 | power(base, exponent) | base raised to the power of exponent              |

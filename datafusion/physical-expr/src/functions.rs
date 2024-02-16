@@ -290,6 +290,7 @@ pub fn create_physical_fun(
         BuiltinScalarFunction::Ln => Arc::new(math_expressions::ln),
         BuiltinScalarFunction::Log10 => Arc::new(math_expressions::log10),
         BuiltinScalarFunction::Log2 => Arc::new(math_expressions::log2),
+        BuiltinScalarFunction::Log1p => Arc::new(math_expressions::ln_1p),
         BuiltinScalarFunction::Nanvl => {
             Arc::new(|args| make_scalar_function_inner(math_expressions::nanvl)(args))
         }

@@ -22,7 +22,7 @@ SELECT true, false, false = false, true = false
 true false true false
 
 # test_mathematical_expressions_with_null
-query RRRRRRRRRRRRRRRRRR?RRRRRRRIRRRRRRBB
+query RRRRRRRRRRRRRRRRRR?RRRRRRRRIRRRRRRBB
 SELECT
     sqrt(NULL),
     cbrt(NULL),
@@ -48,6 +48,7 @@ SELECT
     ln(NULL),
     log2(NULL),
     log10(NULL),
+    log1p(NULL),
     power(NULL, 2),
     power(NULL, NULL),
     power(2, NULL),
@@ -60,7 +61,7 @@ SELECT
     isnan(NULL),
     iszero(NULL)
 ----
-NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
 
 # test_array_cast_invalid_timezone_will_panic
 statement error Parser error: Invalid timezone "Foo": 'Foo' is not a valid timezone

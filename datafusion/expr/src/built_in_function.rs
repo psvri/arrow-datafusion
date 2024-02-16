@@ -92,6 +92,8 @@ pub enum BuiltinScalarFunction {
     Log10,
     /// log2
     Log2,
+    /// log1p ln(1+x)
+    Log1p,
     /// nanvl
     Nanvl,
     /// pi
@@ -387,6 +389,7 @@ impl BuiltinScalarFunction {
             BuiltinScalarFunction::Log => Volatility::Immutable,
             BuiltinScalarFunction::Log10 => Volatility::Immutable,
             BuiltinScalarFunction::Log2 => Volatility::Immutable,
+            BuiltinScalarFunction::Log1p => Volatility::Immutable,
             BuiltinScalarFunction::Nanvl => Volatility::Immutable,
             BuiltinScalarFunction::Pi => Volatility::Immutable,
             BuiltinScalarFunction::Power => Volatility::Immutable,
@@ -892,6 +895,7 @@ impl BuiltinScalarFunction {
             | BuiltinScalarFunction::Ln
             | BuiltinScalarFunction::Log10
             | BuiltinScalarFunction::Log2
+            | BuiltinScalarFunction::Log1p
             | BuiltinScalarFunction::Radians
             | BuiltinScalarFunction::Round
             | BuiltinScalarFunction::Signum
@@ -1367,6 +1371,7 @@ impl BuiltinScalarFunction {
             | BuiltinScalarFunction::Ln
             | BuiltinScalarFunction::Log10
             | BuiltinScalarFunction::Log2
+            | BuiltinScalarFunction::Log1p
             | BuiltinScalarFunction::Radians
             | BuiltinScalarFunction::Signum
             | BuiltinScalarFunction::Sin
@@ -1417,6 +1422,7 @@ impl BuiltinScalarFunction {
                 | BuiltinScalarFunction::Ln
                 | BuiltinScalarFunction::Log10
                 | BuiltinScalarFunction::Log2
+                | BuiltinScalarFunction::Log1p
                 | BuiltinScalarFunction::Radians
                 | BuiltinScalarFunction::Round
                 | BuiltinScalarFunction::Signum
@@ -1467,6 +1473,7 @@ impl BuiltinScalarFunction {
             BuiltinScalarFunction::Log => &["log"],
             BuiltinScalarFunction::Log10 => &["log10"],
             BuiltinScalarFunction::Log2 => &["log2"],
+            BuiltinScalarFunction::Log1p => &["log1p"],
             BuiltinScalarFunction::Nanvl => &["nanvl"],
             BuiltinScalarFunction::Pi => &["pi"],
             BuiltinScalarFunction::Power => &["power", "pow"],

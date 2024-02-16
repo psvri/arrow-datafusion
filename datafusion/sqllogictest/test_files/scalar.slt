@@ -660,6 +660,29 @@ select round(log2(a), 5), round(log2(b), 5), round(log2(c), 5) from signed_integ
 NaN 13.28771 NaN
 NaN 6.64386 NaN
 
+## log1p
+
+# ln scalar function
+query RR rowsort
+select log1p(0), log1p(2);
+----
+0 1.098612288668
+
+# ln scalar nulls
+query R rowsort
+select ln(null);
+----
+NULL
+
+# ln with columns (round is needed to normalize the outputs of different operating systems)
+query RRR rowsort
+select round(ln(a), 5), round(ln(b), 5), round(ln(c), 5) from signed_integers;
+----
+0.69315 NaN 4.81218
+1.38629 NULL NULL
+NaN 4.60517 NaN
+NaN 9.21034 NaN
+
 ## nanvl
 
 # nanvl scalar function
